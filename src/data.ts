@@ -56,6 +56,7 @@ export const timeline = [
   {
     title: "Implementation of Synthetic Inertia Emulation in the WECC Generic Model for Large-Scale PV Plants",
     link: "",
+    link_read: "/pdf/PECI_2026_final_01.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2026",
@@ -66,6 +67,7 @@ export const timeline = [
     {
     title: "Investigations on the rate of change of frequency",
     link: "https://diplomaterv.vik.bme.hu/hu/Theses/A-frekvenciavaltozas-meredeksegere-vett1",
+    link_read: "/pdf/Andras_Babai_Thesis_BSc_energy_engineering.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2025",
@@ -76,6 +78,7 @@ export const timeline = [
   {
     title: "The Effect of Inertia on Frequency Variation During System Failures",
     link: "https://tdk.bme.hu/conference/VIK/2025/sessions/energ/paper/Az-inercia-hatasa-a-frekvenciavaltozasra",
+    link_read: "/pdf/Az_inercia_hatasa_a_frekvenciavaltozasra_rendszerbomlasok_eseten.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2025",
@@ -86,6 +89,7 @@ export const timeline = [
   {
     title: "Inductive Effects in the Railway Environment",
     link: "https://tdk.bme.hu/conference/VIK/2024/sessions/energ/paper/Indukalohatas-vasuti-kornyezetben-elmelet-es",
+    link_read: "/pdf/Indukalohatas-vasuti-kornyezetben-elmelet-es-gyakorlat.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2024 – 2025",
@@ -96,6 +100,7 @@ export const timeline = [
   {
     title: "Evaluation of Steel Tape Armour and Copper Screening in Railway Signaling Cables",
     link: "https://ieeexplore.ieee.org/document/11155056/",
+    link_read: "/pdf/Evaluation_of_steel_tape_armour_and_copper_screening_in_railway_signaling_cables_impact_on_screening_factor.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2025",
@@ -106,6 +111,7 @@ export const timeline = [
   {
     title: "The Effect of the Relative Permeability of Steel Armour on the Inner Screening Factor",
     link: "https://ieeexplore.ieee.org/document/11155012/",
+    link_read: "/pdf/The_Effect_of_the_Relative_Permeability_of_Steel_Armour_on_the_Inner_Screening_Factor.pdf",
     org: "BME",
     location: "Budapest, Hungary",
     period: "2025",
