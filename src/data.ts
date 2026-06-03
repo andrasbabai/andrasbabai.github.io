@@ -54,6 +54,18 @@ export const skills = {
 
 export const timeline = [
   {
+    title: "A Dynamic Model of the Central European Power Grid",
+    link: "",
+    link_read: "/pdf/A_Dynamic_Model_of_the_Central_European_Power_Grid_2026.pdf",
+    org: "BME",
+    location: "Budapest, Hungary",
+    period: "2026",
+    description:
+      "Project Laboratory outcome, research supervised by Dr. Csaba Farkas.",
+    type: "project"
+  },
+
+  {
     title: "Implementation of Synthetic Inertia Emulation in the WECC Generic Model for Large-Scale PV Plants",
     link: "",
     link_read: "/pdf/PECI_2026_final_01.pdf",
