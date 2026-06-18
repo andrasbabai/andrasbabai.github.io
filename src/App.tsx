@@ -1,14 +1,14 @@
-import { Routes, Route } from "react-router-dom";
-import Overleaf from "./Overleaf"; // this is your page component
+import { useEffect, useState } from "react"; // 1. UPDATED: Added useState here
+import { profile, projects, skills, timeline } from "./data";
+import Overleaf from "./Overleaf"; // Make sure to import your new component!
 
-export default function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<div>Home Page</div>} />
-      <Route path="/overleaf" element={<Overleaf />} />
-    </Routes>
-  );
-}
+const navLinks = [
+  { id: "home", label: "Home" },
+  // { id: "about", label: "About" },
+  // { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" }
+];
 
 const IconGithub = ({ className = "" }: { className?: string }) => (
   <svg
@@ -55,6 +55,7 @@ const IconFile = ({ className = "" }: { className?: string }) => (
 );
 
 export default function App() {
+  const [showOverleaf, setShowOverleaf] = useState(false);
   useEffect(() => {
     const elements = document.querySelectorAll("[data-reveal]");
     const observer = new IntersectionObserver(
@@ -72,7 +73,23 @@ export default function App() {
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, []);
+  }, [showOverleaf]);
+
+  if (showOverleaf) {
+    return (
+      <div className="relative z-10 text-sand min-h-screen bg-night p-8">
+        <div className="mx-auto max-w-6xl">
+          <button 
+            onClick={() => setShowOverleaf(false)}
+            className="mb-8 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-sand hover:bg-white/10 transition"
+          >
+            ← Back to Portfolio
+          </button>
+          <Overleaf />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative z-10 text-sand">
@@ -134,12 +151,12 @@ export default function App() {
               >
                 Contact Me
               </a>
-              <a
-                href="/overleaf"
-                className="rounded-full border border-white/15 bg-overleaf/5 px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5"
+              <button
+                onClick={() => setShowOverleaf(true)}
+                className="rounded-full border border-white/15 bg-overleaf/5 px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5 text-left"
               >
                 Overleaf
-              </a>
+              </button>
             </div>
           </div>
 
