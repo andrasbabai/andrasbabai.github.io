@@ -14,17 +14,6 @@ export default function Overleaf() {
       </header>
 
       <main className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-        {/* Left/Main Column: Server Info */}
-        <div className="card p-6 md:col-span-2 space-y-4">
-          <p className="text-sm text-mist/80">
-            This is a standalone route mounted at <strong className="text-sand">/overleaf</strong>. Use this page to request access, view server status, or navigate to our core writing suite via our secure network tunnel.
-          </p>
-          <div>
-            <a href="/" className="inline-block text-sm font-semibold text-darkorange hover:underline">
-              &larr; Back to home
-            </a>
-          </div>
-        </div>
 
         {/* Right Column: Dynamic Registration Request Form */}
         <div className="card p-6 border border-mist/20 rounded-xl bg-opacity-50 backdrop-blur-sm shadow-xl">
