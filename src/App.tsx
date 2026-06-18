@@ -133,6 +133,12 @@ export default function App() {
               >
                 Contact Me
               </a>
+              <a
+                href="#contact"
+                className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5"
+              >
+                Overleaf
+              </a>
             </div>
           </div>
 

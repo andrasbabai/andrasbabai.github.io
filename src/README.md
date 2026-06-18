@@ -1,2 +1,0 @@
-# andrasbabai.github.io
-Portfolio
