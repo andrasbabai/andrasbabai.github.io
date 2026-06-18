@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"; // 1. UPDATED: Added useState here
 import { profile, projects, skills, timeline } from "./data";
-import Overleaf from "./Overleaf"; // Make sure to import your new component!
+import  Overleaf from "./Overleaf"; // Make sure to import your new component!
 
 const navLinks = [
   { id: "home", label: "Home" },
