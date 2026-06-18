@@ -134,7 +134,7 @@ export default function App() {
                 Contact Me
               </a>
               <a
-                href="#projects"
+                href="https://andrasbabai.github.io/overleaf"
                 className="rounded-full bg-overleaf px-6 py-3 text-sm font-semibold text-sand shadow-glow transition hover:-translate-y-0.5"
               >
                 Overleaf
