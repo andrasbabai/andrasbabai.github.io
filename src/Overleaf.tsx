@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { profile } from "./data";
 
-export default function Overleaf() {
+interface OverleafProps {
+    onNavigateToContact: () => void;
+    }
+const ADMIN_EMAIL = "babai.andras@gmail.com"; 
+
+export default function Overleaf({ onNavigateToContact }: OverleafProps) {
   const [submitted, setSubmitted] = useState(false);
-
-  // Replace this with your actual personal email address
-  const ADMIN_EMAIL = "babai.andras@gmail.com"; 
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 pb-20 text-sand min-h-screen flex flex-col justify-between">
@@ -14,19 +17,17 @@ export default function Overleaf() {
         <p className="mt-2 text-lg text-mist/80">Access, configuration, and request management for our private server.</p>
       </header>
 
-      {/* Main Layout Grid */}
-      <main className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+      {/* SECTION 1: Split Top Row (Registration Step & Form) */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start pb-12 border-b border-white/5">
         
-        {/* Left Columns (Span 2): Overleaf Server Tutorial */}
-        <div className="lg:col-span-2 space-y-12 pr-0 lg:pr-6">
-          
+        {/* Left Column (Span 2): Step 1 Registration */}
+        <div className="lg:col-span-2 space-y-6 pr-0 lg:pr-6">
           <div>
             <h2 className="text-2xl font-semibold text-sand tracking-tight border-b border-white/5 pb-2 mb-4">
               Overleaf Server Tutorial
             </h2>
           </div>
 
-          {/* Subtitle: Register to the server */}
           <section className="space-y-3">
             <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">1</span>
@@ -41,61 +42,10 @@ export default function Overleaf() {
               </p>
             </div>
           </section>
-
-          {/* Subtitle: Connect to overleaf */}
-          <section className="space-y-4">
-            <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">2</span>
-              Connect to Overleaf
-            </h3>
-            <div className="pl-8 space-y-4 text-sm text-mist/80">
-              <p>
-                Once registered, you can log directly into the custom platform instance to build, compile, and manage your documents.
-              </p>
-              
-              <div>
-                <a 
-                  href="https://servera.tailb48503.ts.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/10 px-5 py-2.5 text-xs font-semibold text-sand transition hover:bg-white/15 hover:-translate-y-0.5"
-                >
-                  Go to Server Console →
-                </a>
-              </div>
-
-              <ul className="list-disc pl-5 space-y-1 text-mist/70">
-                <li>Securely login via your newly configured credentials.</li>
-                <li>Create, edit, and share comprehensive LaTeX projects seamlessly with other registered instance users.</li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Subtitle: Support */}
-          <section className="space-y-3">
-            <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">3</span>
-              Instance Support
-            </h3>
-            <div className="pl-8 space-y-4 text-sm text-mist/80">
-              <p>
-                Need to modify system data, offboard profiles, or remove inactive accounts? Please coordinate directly with administration.
-              </p>
-              <div>
-                <a 
-                  href="#contact" 
-                  className="inline-flex items-center gap-2 rounded-full bg-darkorange px-5 py-2.5 text-xs font-semibold text-sand shadow-glow transition hover:-translate-y-0.5"
-                >
-                  Reach Me / Contact Administration
-                </a>
-              </div>
-            </div>
-          </section>
-
         </div>
 
         {/* Right Column (Span 1): Dynamic Registration Request Form */}
-        <div className="card p-8 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-xl shadow-2xl space-y-6 sticky top-28">
+        <div className="card p-8 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-xl shadow-2xl space-y-6">
           <div>
             <h2 className="text-xl font-semibold text-sand">Request Server Access</h2>
             <p className="mt-2 text-xs text-mist/70 leading-relaxed">
@@ -108,7 +58,6 @@ export default function Overleaf() {
             method="POST"
             className="space-y-5"
           >
-            {/* FormSubmit Special Configuration Options */}
             <input type="hidden" name="_subject" value="New Overleaf Registration Request!" />
             <input type="hidden" name="_captcha" value="true" />
             <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : '#'} />
@@ -129,14 +78,69 @@ export default function Overleaf() {
 
             <button 
               type="submit" 
-              className="w-full bg-darkorange hover:bg-darkorange/90 text-sand font-semibold text-sm py-3 px-4 rounded-full transition shadow-glow hover:-translate-y-0.5"
+              className="w-full bg-[#47a142] hover:bg-[#3d8b39] text-white font-semibold text-sm py-3 px-4 rounded-full transition shadow-[0_0_20px_rgba(71,161,66,0.15)] hover:-translate-y-0.5"
             >
               Submit Request
             </button>
           </form>
         </div>
+      </div>
 
-      </main>
+      {/* SECTION 2: Full Width Bottom Row (Points 2 & 3) */}
+      <div className="mt-12 space-y-12 max-w-4xl">
+        
+        {/* Subtitle: Connect to overleaf */}
+        <section className="space-y-4">
+          <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">2</span>
+            Connect to Overleaf
+          </h3>
+          <div className="pl-8 space-y-4 text-sm text-mist/80">
+            <p>
+              Once registered, you can log directly into the custom platform instance to build, compile, and manage your documents.
+            </p>
+            
+            <div>
+              <a 
+                href="https://servera.tailb48503.ts.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/10 px-5 py-2.5 text-xs font-semibold text-sand transition hover:bg-white/15 hover:-translate-y-0.5"
+              >
+                Go to Server Console →
+              </a>
+            </div>
+
+            <ul className="list-disc pl-5 space-y-1 text-mist/70">
+              <li>Securely login via your newly configured credentials.</li>
+              <li>Create, edit, and share comprehensive LaTeX projects seamlessly with other registered instance users.</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Subtitle: Support */}
+        <section className="space-y-3">
+          <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">3</span>
+            Instance Support
+          </h3>
+          <div className="pl-8 space-y-4 text-sm text-mist/80">
+            <p>
+              Need to modify system data, offboard profiles, or remove inactive accounts? Please coordinate directly with administration.
+            </p>
+            <div>
+              {/* 3. UPDATED: Swapped from an <a> tag to a clickable button */}
+              <button 
+                onClick={onNavigateToContact}
+                className="inline-flex items-center gap-2 rounded-full bg-darkorange px-5 py-2.5 text-xs font-semibold text-sand shadow-glow transition hover:-translate-y-0.5"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </div>
     </div>
     );
 }

@@ -85,7 +85,13 @@ export default function App() {
           >
             ← Back to Portfolio
           </button>
-          <Overleaf />
+          <Overleaf onNavigateToContact={() => {
+            setShowOverleaf(false);
+            // Gives the portfolio code a microsecond to render before snapping down
+            setTimeout(() => {
+              window.location.hash = "contact";
+            }, 50);
+          }} />
         </div>
       </div>
     );
