@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Page Not Found</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>
+  // GitHub Pages SPA fallback: load index.html and let the client router handle the path
+  (function () {
+    var path = location.pathname;
+    fetch('/index.html')
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        document.open();
+        document.write(html);
+        document.close();
+        // preserve the original path so the SPA router can read it
+        history.replaceState({}, '', path);
+      })
+      .catch(function () {
+        // If fetch fails, show a simple message
+        document.body.innerHTML = '<h1>Page not found</h1><p>Please go back to <a href="/">home</a>.</p>';
+      });
+  })();
+</script>
