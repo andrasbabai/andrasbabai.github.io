@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { profile, projects, skills, timeline } from "./data";
+import { Routes, Route } from "react-router-dom";
+import Overleaf from "./Overleaf"; // this is your page component
 
-const navLinks = [
-  { id: "home", label: "Home" },
-  // { id: "about", label: "About" },
-  // { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" }
-];
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<div>Home Page</div>} />
+      <Route path="/overleaf" element={<Overleaf />} />
+    </Routes>
+  );
+}
 
 const IconGithub = ({ className = "" }: { className?: string }) => (
   <svg
@@ -134,7 +135,7 @@ export default function App() {
                 Contact Me
               </a>
               <a
-                href="#contact"
+                href="/overleaf"
                 className="rounded-full border border-white/15 bg-overleaf/5 px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5"
               >
                 Overleaf
