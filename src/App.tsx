@@ -153,7 +153,7 @@ export default function App() {
               </a>
               <button
                 onClick={() => setShowOverleaf(true)}
-                className="rounded-full border border-white/15 bg-overleaf/5 px-6 py-3 text-sm font-semibold text-sand transition hover:-translate-y-0.5 text-left"
+                className="rounded-full bg-overleaf hover:bg-[#3d8b39] px-6 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(71,161,66,0.2)] transition hover:-translate-y-0.5 text-left"
               >
                 Overleaf
               </button>

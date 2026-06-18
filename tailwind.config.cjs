@@ -8,6 +8,7 @@ module.exports = {
         darkblue: "#0d1b2a",
         darkerblue: "#08101a",
         darkorange: "#5AA5FF",
+        overleaf: "#49b67a",
         sand: "#f5efe6",
         clay: "#1b2433",
         mist: "#cbd5e1"
