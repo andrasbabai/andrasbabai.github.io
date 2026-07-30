@@ -92,7 +92,7 @@ export default function Overleaf({ onNavigateToContact }: OverleafProps) {
         {/* Subtitle: Connect to overleaf */}
         <section className="space-y-4">
           <h3 className="text-lg font-medium text-darkorange flex items-center gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-darkorange/10 text-xs text-darkorange">2</span>
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-overleaf text-xs text-darkorange">2</span>
             Connect to Overleaf
           </h3>
           <div className="pl-8 space-y-4 text-sm text-mist/80">
