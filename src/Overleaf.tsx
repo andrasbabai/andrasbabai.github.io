@@ -102,7 +102,7 @@ export default function Overleaf({ onNavigateToContact }: OverleafProps) {
             
             <div>
               <a 
-                href="https://servera.tailb48503.ts.net/"
+                href="https://overleaf.andras.babai.uk/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/10 px-5 py-2.5 text-xs font-semibold text-sand transition hover:bg-white/15 hover:-translate-y-0.5"
